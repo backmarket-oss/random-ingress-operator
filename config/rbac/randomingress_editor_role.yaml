@@ -1,0 +1,24 @@
+# permissions for end users to edit randomingresses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: randomingress-editor-role
+rules:
+- apiGroups:
+  - networking.backmarket.io
+  resources:
+  - randomingresses
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - networking.backmarket.io
+  resources:
+  - randomingresses/status
+  verbs:
+  - get

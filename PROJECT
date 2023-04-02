@@ -1,0 +1,16 @@
+domain: backmarket.io
+layout:
+- go.kubebuilder.io/v3
+projectName: random-ingress-operator
+repo: github.com/BackMarket-oss/random-ingress-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: backmarket.io
+  group: networking
+  kind: RandomIngress
+  path: github.com/BackMarket-oss/random-ingress-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

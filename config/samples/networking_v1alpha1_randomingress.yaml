@@ -1,0 +1,31 @@
+apiVersion: networking.backmarket.io/v1alpha1
+kind: RandomIngress
+metadata:
+  name: exampleingress
+spec:
+  ingressTemplate:
+    metadata:
+      annotations:
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        example.com/some-random-annotation: willBeCopied
+      labels:
+        service: example
+    spec:
+      rules:
+      # The controller will enforce that a |RANDOM| tag is present in every host, and refuse to create the Ingress otherwise
+      - host: "|RANDOM|.example.com" 
+        http:
+          paths:
+          - backend:
+              service:
+                name: example-service
+                port:
+                  number: 80
+      - host: "www.|RANDOM|.example.com"
+        http:
+          paths:
+          - backend:
+              service:
+                name: example-service
+                port:
+                  number: 80

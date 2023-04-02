@@ -1,0 +1,4 @@
+/*
+Copyright 2022 the random-ingress-operator authors.
+SPDX-License-Identifier: Apache-2.0
+*/

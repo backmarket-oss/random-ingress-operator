@@ -1,0 +1,20 @@
+# permissions for end users to view randomingresses.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: randomingress-viewer-role
+rules:
+- apiGroups:
+  - networking.backmarket.io
+  resources:
+  - randomingresses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.backmarket.io
+  resources:
+  - randomingresses/status
+  verbs:
+  - get

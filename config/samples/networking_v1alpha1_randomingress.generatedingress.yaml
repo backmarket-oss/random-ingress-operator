@@ -1,0 +1,33 @@
+# This is an example of an Ingress that could be generated based on the RandomIngress
+# definition in networking_v1alpha1_randomingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: exampleingress-123456ab12ef
+  labels:
+    service: example
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    example.com/some-random-annotation: willBeCopied
+
+    # Inserted by the random ingress operator for information.
+    # The operator will create a new Ingress with new random value a few minutes
+    # before this time, and will delete this Ingress instance at the given time.
+    networking.backmarket.io/expires-at: 2021-09-02T21:08:08Z 
+spec:
+  rules:
+  # All instances of |RANDOM| in the host fields of the RandomIngress template will
+  # be replaced by a new random value each time the Ingress is instantiated.
+  # The value is identical for different hosts of the same Ingress resource. 
+  - host: "a2e7a42e-3be2-4921-b187-0f067dbd6520.example.com"
+    http:
+      paths:
+      - backend:
+          serviceName: example-service
+          servicePort: 80
+  - host: "www.a2e7a42e-3be2-4921-b187-0f067dbd6520.example.com"
+    http:
+      paths:
+      - backend:
+          serviceName: example-service
+          servicePort: 80
