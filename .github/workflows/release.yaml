@@ -26,6 +26,14 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
         run: make build-image
 
+      - name: Login to GitHub Container Registry
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish image to Container registry
         if: ${{ steps.release.outputs.releases_created }}
         run: |
