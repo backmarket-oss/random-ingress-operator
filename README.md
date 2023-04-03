@@ -1,5 +1,6 @@
 # random-ingress-operator
 
+
 A Kubernetes operator to manage randomly named Ingresses with a maximum duration. When that duration is reached, the ingress is updated with a new random name.
 
 ## Example
