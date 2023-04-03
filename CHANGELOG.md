@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.2...v0.1.3) (2023-04-03)
+
+
+### Bug Fixes
+
+* **release:** login to GHCR before publishing package ([bfd2ea4](https://github.com/backmarket-oss/random-ingress-operator/commit/bfd2ea470bb8f16578df24097ac00098fca44a39))
+
 ## [0.1.2](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.1...v0.1.2) (2023-04-03)
 
 
