@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.1...v0.1.2) (2023-04-03)
+
+
+### Bug Fixes
+
+* **release:** create published releases instead of pre-releases ([1ec9dc1](https://github.com/backmarket-oss/random-ingress-operator/commit/1ec9dc1f8c0f828019ebf3d9792fb60c5ec18661))
+* **release:** proper reference to release-please tag_name ([3226a91](https://github.com/backmarket-oss/random-ingress-operator/commit/3226a9135c8fdd6417ea6dc3381657bd94c5616f))
+
 ## [0.1.1](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.0...v0.1.1) (2023-04-03)
 
 
