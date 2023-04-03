@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          command: manifest
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        if: ${{ steps.release.outputs.releases_created }}
+
+      - name: Build image
+        if: ${{ steps.release.outputs.releases_created }}
+        run: make build-image
+
+      - name: Publish image to Container registry
+        run: |
+          docker tag random-ingress-operator:latest ghcr.io/backmarket-oss/random-ingress-operator:${{ steps.release.outputs['packages/.--tag_name'] }}
+          docker push ghcr.io/backmarket-oss/random-ingress-operator:${{ steps.release.outputs['packages/.--tag_name'] }}
