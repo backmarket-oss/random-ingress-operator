@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.5...v0.1.6) (2023-04-04)
+
+
+### Bug Fixes
+
+* **release:** grant packages:write permissions to the workflow ([b34d647](https://github.com/backmarket-oss/random-ingress-operator/commit/b34d647cae0fd4284d94f8149f9134da6081f9d2))
+
 ## [0.1.5](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.4...v0.1.5) (2023-04-04)
 
 
