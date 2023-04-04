@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.4...v0.1.5) (2023-04-04)
+
+
+### Bug Fixes
+
+* **docs:** trivial change to README to test release ([0981bbc](https://github.com/backmarket-oss/random-ingress-operator/commit/0981bbc3b64942f7d9b9e326346f1bbc6fd7331d))
+
 ## [0.1.4](https://github.com/backmarket-oss/random-ingress-operator/compare/v0.1.3...v0.1.4) (2023-04-03)
 
 
